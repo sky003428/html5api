@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="info" contenteditable="true">
+        ABC
+
+    </div>
+    
+    <script>
+        const info = document.querySelector('#info');
+
+        const oldContent = localStorage.getItem('my_content');
+        if(oldContent){
+            info.innerText = oldContent;
+        }
+
+
+        info.addEventListener('focus', function(){
+            info.style.border = '1px solid red';
+            info.style.backgroundColor = 'yellow';
+        });
+        info.addEventListener('blur', function(){
+            info.style.border = '1px solid gray';
+            info.style.backgroundColor = 'white';
+        });
+        info.addEventListener('input', function(){
+            console.log(info.innerHTML);
+            console.log(info.innerText);
+            localStorage.setItem('my_content', info.innerText);
+        });
+
+
+    </script>
+</body>
+</html>

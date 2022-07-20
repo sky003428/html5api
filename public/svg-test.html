@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #mypath {
+        fill: red;
+    }
+
+    </style>
+</head>
+<body>
+    <div>
+        <svg width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
+            <path id="mypath" d="m67.065 95.097-22.684-15.082-25.284 10.136 7.3339-26.234-17.454-20.914 27.217-1.1319 14.497-23.062 9.4869 25.535 26.413 6.661-21.353 16.913z" fill="#008000" stroke-width=".665"/>
+           </svg>
+
+    </div>
+    <script>
+        const mypath = document.querySelector('#mypath');
+
+        mypath.addEventListener('mouseover', ()=>{
+            mypath.style.fill = 'blue';
+        });
+        mypath.addEventListener('mouseout', ()=>{
+            mypath.style.fill = 'red';
+        });
+
+
+    </script>
+</body>
+</html>
